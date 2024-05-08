@@ -1,13 +1,14 @@
-import React from 'react';
-import "../assets/styles/Home.css"
+import React from "react";
+import Navbar from "../components/Navbar";
+import "../assets/styles/Home.css";
 
 const HomeView = () => {
 
-    return(
-        <div>
-
-        </div>
-    )
-}
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
+};
 
 export default HomeView;
