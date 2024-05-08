@@ -1,27 +1,29 @@
 .navbar-header {
-    display: flex;
-    height: 48px;
-    gap: 10px;
-    box-shadow: 0px 2px 4px 0px #00000040;
-    font-size: 20px;
-    font-weight: 900;
-    line-height: 30px;
-    color: #2e0039;
-    padding: 0 20px;
-    width: 100%;
-  }
-  
-  .web-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 30%;
-  }
+  display: flex;
+  justify-content: center;
+  height: 48px;
+  gap: 10px;
+  box-shadow: 0px 2px 4px 0px #00000040;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 30px;
+  color: #2e0039;
+  padding: 0 20px;
+  width: 100%;
+}
 
-  .icon {
-      width: 32px; 
-      height: 32px;
-      top: 8px; 
-      left: 529px; 
-      padding: 7px 5.67px 7px 5.67px; 
-  }
+.web-header {
+  display: flex;
+  align-items: center;
+  /* justify-content: left; */
+  /* width: 717px; */
+  margin-right: 600px;
+  gap: 10px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  top: 8px;
+  padding: -55px;
+}
