@@ -46,11 +46,12 @@ select {
   height: 100%;
 }
 
-.convertIcon {
-  width: 30px;
-  padding-top: 1%;
+.convertIcon-button {
+  width: 15px;
+  padding-top: 60%;
   height: 90%;
   margin-bottom: 5px;
+  color:#ffffff
 }
 
 input {
@@ -86,7 +87,7 @@ button {
   border: none;
 }
 
-.hearth {
+.heart {
   size: 100px;
   color: white;
 }
