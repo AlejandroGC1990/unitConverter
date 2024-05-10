@@ -18,7 +18,7 @@ const Converter = () => {
     const recalculateResult = () => {
       const value = parseFloat(inputValue);
 
-      switch (document.querySelector("select").value) {
+      switch (selectedOption) {
         case "":
           setDisplayUnit("");
           setDisplayUnitConverted("");
@@ -65,34 +65,36 @@ const Converter = () => {
     setSelectedOption(event.target.value);
   };
 
-  // const handleUnitSwap = () => {
-  //   switch (selectedOption) {
-  //     case "kmToMiles":
-  //       setSelectedOption("milesToKm");
-  //       break;
-  //     case "milesToKm":
-  //       setSelectedOption("kmToMiles");
-  //       break;
-  //     case "feetToMeters":
-  //       setSelectedOption("metersToFeet");
-  //       break;
-  //     case "metersToFeet":
-  //       setSelectedOption("feetToMeters");
-  //       break;
-  //     case "cmToInches":
-  //       setSelectedOption("inchesToCm");
-  //       break;
-  //     case "inchesToCm":
-  //       setSelectedOption("cmToInches");
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
-
-  // const handleArrowButtonClick = () => {
-  //   handleUnitSwap();
-  // };
+  const handleUnitSwap = () => {
+    switch (selectedOption) {
+      case "kmToMiles":
+        setSelectedOption("milesToKm");
+        document.querySelector("select").value = "milesToKm";
+        break;
+      case "milesToKm":
+        setSelectedOption("kmToMiles");
+        document.querySelector("select").value = "kmToMiles";
+        break;
+      case "feetToMeters":
+        setSelectedOption("metersToFeet");
+        document.querySelector("select").value = "metersToFeet";
+        break;
+      case "metersToFeet":
+        setSelectedOption("feetToMeters");
+        document.querySelector("select").value = "feetToMeters";
+        break;
+      case "cmToInches":
+        setSelectedOption("inchesToCm");
+        document.querySelector("select").value = "inchesToCm";
+        break;
+      case "inchesToCm":
+        setSelectedOption("cmToInches");
+        document.querySelector("select").value = "cmToInches";
+        break;
+      default:
+        break;
+    }
+  };
 
   const handleAutoConvert = (event) => {
     const value = parseFloat(event.target.value) || 0;
@@ -121,8 +123,7 @@ const Converter = () => {
           <option value="inchesToCm">inches → cm</option>
         </select>
 
-        {/* <button onClick={handleArrowButtonClick}> */}
-        <button>
+        <button onClick={handleUnitSwap}>
           <FontAwesomeIcon
             className="convertIcon-button"
             icon={faArrowRightArrowLeft}
