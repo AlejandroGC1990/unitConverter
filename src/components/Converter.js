@@ -26,32 +26,32 @@ const Converter = () => {
         case "kmToMiles":
           setDisplayUnit("km");
           setDisplayUnitConverted("miles");
-          setResult(value * 0.621371 || 0);
+          setResult((value * 0.621371 || 0).toFixed(2));
           break;
         case "milesToKm":
           setDisplayUnit("miles");
           setDisplayUnitConverted("km");
-          setResult(value * 1.60934);
+          setResult((value * 1.60934).toFixed(2));
           break;
         case "feetToMeters":
           setDisplayUnit("feet");
           setDisplayUnitConverted("meters");
-          setResult(value * 0.3048);
+          setResult((value * 0.3048).toFixed(2));
           break;
         case "metersToFeet":
           setDisplayUnit("meters");
           setDisplayUnitConverted("feet");
-          setResult(value * 3.28084);
+          setResult((value * 3.28084).toFixed(2));
           break;
         case "cmToInches":
           setDisplayUnit("cm");
           setDisplayUnitConverted("inches");
-          setResult(value * 0.393701);
+          setResult((value * 0.393701).toFixed(2));
           break;
         case "inchesToCm":
           setDisplayUnit("inches");
           setDisplayUnitConverted("cm");
-          setResult(value * 2.54);
+          setResult((value * 2.54).toFixed(2));
           break;
         default:
           break;
