@@ -4,8 +4,7 @@ import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/Converter.css";
 
-//!FALTA IMPLEMENTAR EL BOTÓN INTERCAMBIO
-//!FALTA IMPLEMENTAR EL BOTÓN GUARDAR
+//! FALTA IMPLEMENTAR EL BOTÓN GUARDAR
 
 const Converter = () => {
   const [inputValue, setInputValue] = useState(0);
@@ -61,10 +60,12 @@ const Converter = () => {
     recalculateResult();
   }, [inputValue, selectedOption]);
 
+  //Maneja el cambio de opciiones en el select de unidades.
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
+  //Maneja el botón de intercambio de unidades
   const handleUnitSwap = () => {
     switch (selectedOption) {
       case "kmToMiles":
@@ -96,13 +97,9 @@ const Converter = () => {
     }
   };
 
+  //Se encarga de actualizar el valor del input
   const handleAutoConvert = (event) => {
     const value = parseFloat(event.target.value) || 0;
-    setInputValue(value);
-  };
-
-  const handleClick = (event) => {
-    const value = parseFloat(event.target.value);
     setInputValue(value);
   };
 
@@ -132,7 +129,7 @@ const Converter = () => {
         <input
           type="number"
           value={inputValue}
-          onClick={handleClick}
+          onClick={handleAutoConvert}
           onChange={handleAutoConvert}
         />
         <p>{displayUnit}</p>
