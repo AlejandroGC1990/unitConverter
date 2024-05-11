@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as faSolidHeart} from "@fortawesome/free-solid-svg-icons";
+import { faHeart} from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/Converter.css";
 
 //! FALTA IMPLEMENTAR EL BOTÓN GUARDAR
 
-const Converter = () => {
+const Converter = (
+  {
+    /*setSavedContent*/
+  }
+) => {
   const [inputValue, setInputValue] = useState(0);
   const [displayUnit, setDisplayUnit] = useState("km");
   const [displayUnitConverted, setDisplayUnitConverted] = useState("miles");
   const [result, setResult] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
+  // const [savedContent, setSavedContentLocal] = useState([]);
+
+  // useEffect(() => {
+  //   const savedData = JSON.parse(localStorage.getItem("savedContent")) || [];
+  //   setSavedContent(savedData);
+  //   setSavedContentLocal(savedData);
+  // }, []);
 
   useEffect(() => {
     const recalculateResult = () => {
@@ -103,47 +115,63 @@ const Converter = () => {
     setInputValue(value);
   };
 
+  //Se encarga de guardar el valor de
+  //inputValue, displayUnit, result y displayUnitConvert
+  // const handleSaveContent = () => {
+  //   const contentToSave = {
+  //     inputValue,
+  //     displayUnit,
+  //     result,
+  //     displayUnitConverted,
+  //   };
+  //   const updatedSavedContent = [...savedContent, contentToSave];
+  //   setSavedContentLocal(updatedSavedContent);
+  //   setSavedContent(updated avedContent", JSON.stringify(updatedSavedContent));
+  // };
+
   return (
     <div className="converter">
-      <div className="title">Convert</div>
+      <div className="content-converter">
+        <p className="title">convert</p>
+        <div className="content-select-icon-input">
+          {/* <div className="content-select-icon"> */}
+          <select onChange={handleSelectChange}>
+            <option value="" hidden led selected>
+              Choise a option
+            </option>
+            <option value="kmToMiles">km → miles</option>
+            <option value="milesToKm">miles → km</option>
+            <option value="feetToMeters">feet → meters</option>
+            <option value="metersToFeet">meters → feet</option>
+            <option value="cmToInches">cm → inches</option>
+            <option value="inchesToCm">inches → cm</option>
+          </select>
 
-      <div className="content-select-icon-input">
-        <select onChange={handleSelectChange}>
-          <option value="" hidden led selected>
-            Choise a option
-          </option>
-          <option value="kmToMiles">km → miles</option>
-          <option value="milesToKm">miles → km</option>
-          <option value="feetToMeters">feet → meters</option>
-          <option value="metersToFeet">meters → feet</option>
-          <option value="cmToInches">cm → inches</option>
-          <option value="inchesToCm">inches → cm</option>
-        </select>
+          <button onClick={handleUnitSwap} >
+            <FontAwesomeIcon icon={faArrowRightArrowLeft} className="convertIcon-button" />
+          </button>
+          {/* </div> */}
 
-        <button onClick={handleUnitSwap}>
-          <FontAwesomeIcon
-            className="convertIcon-button"
-            icon={faArrowRightArrowLeft}
+          <input
+            type="number"
+            value={inputValue}
+            onClick={handleAutoConvert}
+            onChange={handleAutoConvert}
           />
-        </button>
-        <input
-          type="number"
-          value={inputValue}
-          onClick={handleAutoConvert}
-          onChange={handleAutoConvert}
-        />
-        <p>{displayUnit}</p>
-      </div>
-
-      <div className="content-button-result">
-        <button>
-          <FontAwesomeIcon icon={faHeart} className="heart" />
-        </button>
-        <div className="result">
-          <strong>{result}</strong>
+          <p>{displayUnit}</p>
         </div>
-        <div className="unitResult">
-          <strong>{displayUnitConverted}</strong>
+
+        <div className="content-button-result">
+          <button className="button-heart">
+            {/* <button onClick={handleSaveContent}> */}
+            <FontAwesomeIcon icon={faHeart} className="heart" />
+          </button>
+          <div className="result">
+            <strong>{result}</strong>
+          </div>
+          <div className="unitResult">
+            <strong>{displayUnitConverted}</strong>
+          </div>
         </div>
       </div>
     </div>

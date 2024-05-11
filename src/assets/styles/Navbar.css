@@ -10,14 +10,14 @@
   color: #2e0039;
   padding: 0 20px;
   width: 100%;
+  /* position: fixed; */
 }
 
 .web-header {
   display: flex;
   align-items: center;
-  /* justify-content: left; */
-  /* width: 717px; */
-  margin-right: 600px;
+  width: 717px;
+  padding-right: 4%;
   gap: 10px;
 }
 
@@ -26,4 +26,12 @@
   height: 32px;
   top: 8px;
   padding: -55px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-header {
+    
+  }
+
 }
