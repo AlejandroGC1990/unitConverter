@@ -8,10 +8,10 @@
   gap: 10px;
   line-height: 30px;
   width: 100%;
-  position: absolute;
   background-color: #2e0039;
   bottom: 0;
   left: 0;
+  z-index: 1000;
 }
 
 .pBox {
@@ -23,5 +23,21 @@
 
 .centered-p {
   color: #ffffff;
-  text-align: center; 
+  text-align: center;
   margin: 0px 20px;
+}
+
+@media (max-width: 390px) {
+  .footer {
+    position: fixed;
+    /* position: absolute; */
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -8px 0px 50px -5px;
+    height: 48px;
+    width: 100%;
+    background-color: #2e0039;
+  }
+}

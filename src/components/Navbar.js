@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <header className="navbar-header">
       <div className="web-header">
-        <FontAwesomeIcon icon={faExchange} />
+        <FontAwesomeIcon icon={faExchange} className="icon"/>
         <p className="navbar-text">unit converter</p>
       </div>
     </header>
