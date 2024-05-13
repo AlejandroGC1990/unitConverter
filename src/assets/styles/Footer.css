@@ -30,7 +30,6 @@
 @media (max-width: 390px) {
   .footer {
     position: fixed;
-    /* position: absolute; */
     bottom: 0;
     display: flex;
     justify-content: center;

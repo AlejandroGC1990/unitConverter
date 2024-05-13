@@ -4,8 +4,6 @@ import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/Converter.css";
 
-//! FALTA IMPLEMENTAR EL BOTÓN GUARDAR
-
 const Converter = () => {
   const [inputValue, setInputValue] = useState(0);
   const [displayUnit, setDisplayUnit] = useState("km");

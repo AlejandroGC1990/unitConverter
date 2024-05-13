@@ -18,7 +18,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* background-color: antiquewhite; */
   width: 90%;
   height: 15%;
   font-size: 22px;
@@ -33,7 +32,6 @@
   justify-content: flex-start;
   width: 90%;
   height: 25%;
-  /* background-color: aqua; */
 }
 
 select {
@@ -47,7 +45,6 @@ select {
 }
 
 button {
-  /* background-color: red; */
   background-color: transparent;
   border: transparent;
   width: 5%;
@@ -87,14 +84,11 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: flex-start;
   width: 93%;
   height: 20%;
-  /* background-color: aquamarine; */
 }
 
 .button-heart {
   width: 5%;
-  /* background-color: red; */
   height: 100%;
-  /* background-color: transparent; */
   border: none;
 }
 
@@ -108,7 +102,6 @@ input[type="number"]::-webkit-inner-spin-button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /* background-color: blanchedalmond; */
   width: 80%;
   height: 100%;
   margin: 0% 1.5% 0% 2.5%;
@@ -122,7 +115,6 @@ input[type="number"]::-webkit-inner-spin-button {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* background-color: green; */
 }
 /* MOBILE */
 
@@ -146,7 +138,6 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
     padding: 0;
     align-items: flex-start;
-    /* background-color: chocolate; */
   }
 
   .content-select-icon-input {
@@ -157,10 +148,8 @@ input[type="number"]::-webkit-inner-spin-button {
     justify-content: flex-start;
     height: 100px;
     width: 90%;
-    /* gap: 5px; */
     padding: 0;
     margin: 0;
-    /* background-color: red; */
   }
 
   select {
@@ -168,15 +157,11 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 217px;
     font-size: 14px;
     margin: 0 10px 0px 0;
-    /* background-color: aquamarine; */
   }
 
   button {
-    /* background-color: red; */
     display: flex;
     align-items: center;
-    /* background-color: pink; */
-    /* background-color: transparent; */
     border: transparent;
     justify-content: center;
     width: auto;
@@ -190,7 +175,6 @@ input[type="number"]::-webkit-inner-spin-button {
     background-color: transparent;
     color: #ffffff;
     transform: scaleX(-1);
-    /* background-color: aqua; */
   }
 
   input {
@@ -201,14 +185,12 @@ input[type="number"]::-webkit-inner-spin-button {
     font-weight: 200;
     margin: 0 7px 0 0;
     padding: 0px;
-    /* background-color: rgb(85, 139, 139); */
   }
 
   .content-button-result {
     width: 90%;
     align-items: center;
     margin: 0px 0 0 0;
-    /* background-color: aquamarine; */
   }
 
   button {
@@ -229,17 +211,14 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 
   .result {
-    /* background-color: red; */
     width: 183px;
     height: 38px;
-    /* margin: 0 0 0 10px; */
   }
 
   .unit {
     display: flex;
     align-items: center;
     margin: 0 0 0 10px;
-    /* background-color: blue; */
     width: 47px;
     height: 38px;
   }
