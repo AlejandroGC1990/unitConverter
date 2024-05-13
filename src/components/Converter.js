@@ -6,23 +6,20 @@ import "../assets/styles/Converter.css";
 
 //! FALTA IMPLEMENTAR EL BOTÓN GUARDAR
 
-const Converter = (
-  /*{
-    setSavedContent
-  }*/
-) => {
+const Converter = () => {
   const [inputValue, setInputValue] = useState(0);
   const [displayUnit, setDisplayUnit] = useState("km");
   const [displayUnitConverted, setDisplayUnitConverted] = useState("miles");
   const [result, setResult] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
-  // const [savedContent, setSavedContentLocal] = useState([]);
+  const [savedContent, setSavedContent] = useState([]);
 
-  // useEffect(() => {
-  //   const savedData = JSON.parse(localStorage.getItem("savedContent")) || [];
-  //   setSavedContent(savedData);
-  //   setSavedContentLocal(savedData);
-  // }, []);
+  const localStorageSavedContent = localStorage.getItem("savedContent");
+
+  useEffect(() => {
+    const savedData = JSON.parse(localStorage.getItem("savedContent")) || [];
+    setSavedContent(savedData);
+  }, [localStorageSavedContent]);
 
   useEffect(() => {
     const recalculateResult = () => {
@@ -71,7 +68,7 @@ const Converter = (
     recalculateResult();
   }, [inputValue, selectedOption]);
 
-  //Maneja el cambio de opciiones en el select de unidades.
+  //Maneja el cambio de opciones en el select de unidades.
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -116,17 +113,20 @@ const Converter = (
 
   //Se encarga de guardar el valor de
   //inputValue, displayUnit, result y displayUnitConvert
-  // const handleSaveContent = () => {
-  //   const contentToSave = {
-  //     inputValue,
-  //     displayUnit,
-  //     result,
-  //     displayUnitConverted,
-  //   };
-  //   const updatedSavedContent = [...savedContent, contentToSave];
-  //   setSavedContentLocal(updatedSavedContent);
-  //   setSavedContent(updated avedContent", JSON.stringify(updatedSavedContent));
-  // };
+  const handleSaveContent = () => {
+    let contentToSave = {
+      id: new Date().getTime(),
+      inputValue,
+      displayUnit,
+      result,
+      displayUnitConverted,
+    };
+
+    const updatedSavedContent = [...savedContent, contentToSave];
+    localStorage.setItem("savedContent", JSON.stringify(updatedSavedContent));
+    setSavedContent(updatedSavedContent);
+    console.log(updatedSavedContent);
+  };
 
   return (
     <div className="converter">
@@ -144,7 +144,7 @@ const Converter = (
           <option value="inchesToCm">inches → cm</option>
         </select>
 
-        <button onClick={handleUnitSwap} >
+        <button onClick={handleUnitSwap}>
           <FontAwesomeIcon
             icon={faArrowRightArrowLeft}
             className="convertIcon-button"
@@ -164,15 +164,18 @@ const Converter = (
       </div>
 
       <div className="content-button-result">
-        <button className="button-heart">
-          {/* <button onClick={handleSaveContent}> */}
+        <button className="button-heart" onClick={handleSaveContent}>
           <FontAwesomeIcon icon={faHeart} className="heart" />
         </button>
         <div className="result">
-          <p><strong>{result}</strong></p>
+          <p>
+            <strong>{result}</strong>
+          </p>
         </div>
         <div className="unit">
-          <p><strong>{displayUnitConverted}</strong></p>
+          <p>
+            <strong>{displayUnitConverted}</strong>
+          </p>
         </div>
       </div>
     </div>
