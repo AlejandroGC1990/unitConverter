@@ -1,0 +1,28 @@
+.navbar-header {
+  display: flex;
+  justify-content: center;
+  height: 48px;
+  gap: 10px;
+  box-shadow: 0px 2px 4px 0px #00000040;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 30px;
+  color: #2e0039;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.web-header {
+  display: flex;
+  align-items: center;
+  width: 717px;
+  padding-right: 4%;
+  gap: 10px;
+}
+
+.icon {
+  width: 32px;
+  height: 22px;
+  top: 8px;
+  transform: scaleX(-1);
+}
